@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/atlregional/big-data-to-mongo-db/issues"
   },
-  "homepage": "https://github.com/atlregional/big-data-to-mongo-db#readme"
+  "homepage": "https://github.com/atlregional/big-data-to-mongo-db#readme",
+  "dependencies": {
+    "event-stream": "^4.0.1",
+    "mongojs": "^3.1.0"
+  }
 }
