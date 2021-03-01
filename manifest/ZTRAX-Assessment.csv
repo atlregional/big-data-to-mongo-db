@@ -1,11 +1,11 @@
 ﻿TableName,FieldName,column_id,DateType,MaxLength,PandasDataType,AWSDataType
-AdditionalPropertyAddress,RowID,1,uniqueidentifier,16,object,bigint
 AdditionalPropertyAddress,PropertyAddressSequenceNumber,2,int,4,object,int
 AdditionalPropertyAddress,PropertyHouseNumber,3,varchar,13,object,string
 AdditionalPropertyAddress,PropertyHouseNumberExt,4,varchar,10,object,string
 AdditionalPropertyAddress,PropertyStreetPreDirectional,5,char,2,object,string
 AdditionalPropertyAddress,PropertyStreetName,6,varchar,50,object,string
 AdditionalPropertyAddress,PropertyStreetSuffix,7,varchar,6,object,string
+AdditionalPropertyAddress,RowID,1,uniqueidentifier,16,object,bigint
 AdditionalPropertyAddress,PropertyStreetPostDirectional,8,char,2,object,string
 AdditionalPropertyAddress,PropertyBuildingNumber,9,varchar,45,object,string
 AdditionalPropertyAddress,PropertyFullStreetAddress,10,varchar,80,object,string

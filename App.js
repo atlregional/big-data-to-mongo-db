@@ -2,7 +2,8 @@ const fs = require('fs');
 const es = require('event-stream');
 var mongojs = require('mongojs');
 
-const databaseName = 'ztraxhistoric';
+const databaseName = process.argv[3];
+const manifest = process.argv[2];
 // const collectionName = 'main';
 
 var databaseUrl = `mongodb://localhost/${databaseName}`;
@@ -21,16 +22,23 @@ db.on('error', err => {
 
 // const filePath = `../data/ztrax/historic/GA/${fileName}`;
 
+// Ensure column_id are in correct order
 const getCollectionKeysFromCSV = tableName => {
-	const arr = fs.readFileSync('./manifest/ZTRAX-Assessment.csv', 'utf-8').split('\r\n');
+	const arr = fs
+		.readFileSync(`./manifest/${manifest}.csv`, 'utf-8')
+		.split('\r\n')
+		.filter(str => str.search(tableName) >= 0);
 
 	let keys = [];
 
 	for (let i = 1; i < arr.length; i++) {
-		arr[i].split(',')[0] === tableName ? keys.push(arr[i].split(',')[1]) : null;
+		keys.push({
+			key: arr[i].split(',')[1],
+			sorter: arr[i].split(',')[2]
+		});
 	}
 
-	return keys;
+	return keys.sort((a, b) => a.sorter - b.sorter).map(item => item.key);
 };
 
 const getCollectionNamesFromCSV = () => {
@@ -55,7 +63,6 @@ const insertData = () => {
 
 		if (!collections.includes(fileName)) {
 			console.log(`Error: ${fileName}`);
-			continue;
 		}
 
 		const keys = getCollectionKeysFromCSV(fileName);
