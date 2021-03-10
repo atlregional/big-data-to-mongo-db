@@ -3,7 +3,7 @@ const mongoose = require('mongoose'),
 
 const modelConfig = require('./model-association-config.json');
 
-module.exports = (collectionName, keys) => {
+module.exports = async (collectionName, keys) => {
 	const schemaObj = {};
 
 	keys.forEach(key => (schemaObj[key] = { type: String }));
