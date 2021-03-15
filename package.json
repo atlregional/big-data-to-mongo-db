@@ -17,9 +17,12 @@
 	},
 	"homepage": "https://github.com/atlregional/big-data-to-mongo-db#readme",
 	"dependencies": {
+		"csv-stream": "^0.2.0",
 		"dotenv": "^8.2.0",
 		"event-stream": "^4.0.1",
+		"moment": "^2.29.1",
 		"mongojs": "^3.1.0",
-		"mongoose": "^5.11.19"
+		"mongoose": "^5.11.19",
+		"through2": "^4.0.2"
 	}
 }

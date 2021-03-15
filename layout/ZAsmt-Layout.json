@@ -1,0 +1,90 @@
+[
+	{
+		"table": "Main",
+		"parent": null
+	},
+	{
+		"table": "Name",
+		"parent": "Main"
+	},
+	{
+		"table": "Building",
+		"parent": "Main"
+	},
+	{
+		"table": "SaleData",
+		"parent": "Main"
+	},
+	{
+		"table": "TaxDistrict",
+		"parent": "Main"
+	},
+	{
+		"table": "AdditionalPropertyAddress",
+		"parent": "Main"
+	},
+	{
+		"table": "BKManagedSpecific",
+		"parent": "Main"
+	},
+	{
+		"table": "TaxExemption",
+		"parent": "Main"
+	},
+	{
+		"table": "Value",
+		"parent": "Main"
+	},
+	{
+		"table": "LotSiteAppeal",
+		"parent": "Main"
+	},
+	{
+		"table": "VestingCodes",
+		"parent": "Name"
+	},
+	{
+		"table": "MailAddress",
+		"parent": "Name"
+	},
+	{
+		"table": "CareOfName",
+		"parent": "Name"
+	},
+	{
+		"table": "TypeConstruction",
+		"parent": "Building"
+	},
+	{
+		"table": "Garage",
+		"parent": "Building"
+	},
+	{
+		"table": "BuildingAreas",
+		"parent": "Building"
+	},
+	{
+		"table": "InteriorFlooring",
+		"parent": "Building"
+	},
+	{
+		"table": "ExtraFeature",
+		"parent": "Building"
+	},
+	{
+		"table": "Oby",
+		"parent": "Building"
+	},
+	{
+		"table": "ExteriorWall",
+		"parent": "Building"
+	},
+	{
+		"table": "Pool",
+		"parent": "Building"
+	},
+	{
+		"table": "InteriorWall",
+		"parent": "Building"
+	}
+]
