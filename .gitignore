@@ -103,5 +103,10 @@ dist
 # TernJS port file
 .tern-port
 
-# Dummy Data
+# Data
 data
+query-configs
+manifest
+extracts
+layout
+csvs

@@ -1,90 +1,112 @@
 [
 	{
 		"table": "Main",
-		"parent": null
+		"parent": null,
+    "exclude": false
 	},
 	{
 		"table": "Name",
-		"parent": "Main"
+		"parent": "Main",
+    "exclude": true
 	},
 	{
 		"table": "Building",
-		"parent": "Main"
+		"parent": "Main",
+    "exclude": false
 	},
 	{
 		"table": "SaleData",
-		"parent": "Main"
+		"parent": "Main",
+    "exclude": false
 	},
 	{
 		"table": "TaxDistrict",
-		"parent": "Main"
+		"parent": "Main",
+    "exclude": true
 	},
 	{
 		"table": "AdditionalPropertyAddress",
-		"parent": "Main"
+		"parent": "Main",
+    "exclude": true
 	},
 	{
 		"table": "BKManagedSpecific",
-		"parent": "Main"
+		"parent": "Main",
+    "exclude": true
 	},
 	{
 		"table": "TaxExemption",
-		"parent": "Main"
+		"parent": "Main",
+    "exclude": true
 	},
 	{
 		"table": "Value",
-		"parent": "Main"
+		"parent": "Main",
+    "exclude": true
 	},
 	{
 		"table": "LotSiteAppeal",
-		"parent": "Main"
+		"parent": "Main",
+    "exclude": true
 	},
 	{
 		"table": "VestingCodes",
-		"parent": "Name"
+		"parent": "Name",
+    "exclude": true
 	},
 	{
 		"table": "MailAddress",
-		"parent": "Name"
+		"parent": "Name",
+    "exclude": true
 	},
 	{
 		"table": "CareOfName",
-		"parent": "Name"
+		"parent": "Name",
+    "exclude": true
 	},
 	{
 		"table": "TypeConstruction",
-		"parent": "Building"
+		"parent": "Building",
+    "exclude": true
 	},
 	{
 		"table": "Garage",
-		"parent": "Building"
+		"parent": "Building",
+    "exclude": true
 	},
 	{
 		"table": "BuildingAreas",
-		"parent": "Building"
+		"parent": "Building",
+    "exclude": true
 	},
 	{
 		"table": "InteriorFlooring",
-		"parent": "Building"
+		"parent": "Building",
+    "exclude": true
 	},
 	{
 		"table": "ExtraFeature",
-		"parent": "Building"
+		"parent": "Building",
+    "exclude": true
 	},
 	{
 		"table": "Oby",
-		"parent": "Building"
+		"parent": "Building",
+    "exclude": true
 	},
 	{
 		"table": "ExteriorWall",
-		"parent": "Building"
+		"parent": "Building",
+    "exclude": true
 	},
 	{
 		"table": "Pool",
-		"parent": "Building"
+		"parent": "Building",
+    "exclude": true
 	},
 	{
 		"table": "InteriorWall",
-		"parent": "Building"
+		"parent": "Building",
+    "exclude": true
 	}
 ]
