@@ -2,31 +2,14 @@
   "ZAsmt" : {
     "layoutPath" : "./layout/ZAsmt-Layout.json",
     "manifestPath" : "./manifest/ZTRAX-Assessment.csv",
-    "database" : "ztraxAssessment",
-    "joinField" : "RowID",
-    "postFilterCriteria" :{
-      "collection": "Building",
-      "field" : "PropertyLandUseStndCode",
-      "values" :[
-        "RR101",  
-        "RR999",  
-        "RR104",  
-        "RR105",  
-        "RR106",  
-        "RR107",  
-        "RR108",  
-        "RR109",  
-        "RR113",  
-        "RR116",  
-        "RR119",  
-        "RR120"   
-     ]
-    }
+    "database" : "ztraxAssessment2021",
+    "joinField" : "RowID"
+
   },
   "ZTrans" : {
     "layoutPath" : "./layout/ZTrans-Layout.json",
     "manifestPath" : "./manifest/ZTRAX-Transaction.csv",
-    "database" : "ztraxTransaction",
+    "database" : "ztraxTransaction2021",
     "joinField" : "TransId"
   }
 }

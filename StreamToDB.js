@@ -40,7 +40,7 @@ const insertDataPipeline = fileName => new Promise((resolve, reject) => {
 
   const collectionName = fileName.replace('.txt', '');
 
-	const keys = getCollectionKeys(`ut${collectionName}`, manifest);
+	const keys = getCollectionKeys(collectionName, manifest);
   
   console.log('Started', collectionName);
 

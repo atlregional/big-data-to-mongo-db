@@ -1,10 +1,10 @@
 const mongoose = require('mongoose'),
-  Schema = mongoose.Schema;
+Schema = mongoose.Schema;
 
 
-module.exports = async (collectionName, keys, modelConfig, joinField) => {
+module.exports = (collectionName, keys, modelConfig, joinField) => {
   const schemaObj = {};
-  // console.log(keys);
+  console.log('KEYS', keys);
   // const modelConfig = require('./model-association-config.json');
 
 
@@ -31,7 +31,7 @@ module.exports = async (collectionName, keys, modelConfig, joinField) => {
   });
 
   modelConfig.forEach(model => {
-    if (collectionName !== model.table && !model.exclude) {
+    if (collectionName !== model.table && model.include) {
       schema.virtual(model.table, {
         ref: model.table,
         localField: joinField,

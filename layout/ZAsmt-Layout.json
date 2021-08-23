@@ -2,111 +2,111 @@
 	{
 		"table": "Main",
 		"parent": null,
-    "exclude": false
+    "include": true
 	},
 	{
 		"table": "Name",
 		"parent": "Main",
-    "exclude": true
+    "include": false
 	},
 	{
 		"table": "Building",
 		"parent": "Main",
-    "exclude": false
+    "include": true
 	},
 	{
 		"table": "SaleData",
 		"parent": "Main",
-    "exclude": false
+    "include": true
 	},
 	{
 		"table": "TaxDistrict",
 		"parent": "Main",
-    "exclude": true
+    "include": false
 	},
 	{
 		"table": "AdditionalPropertyAddress",
 		"parent": "Main",
-    "exclude": true
+    "include": false
 	},
 	{
 		"table": "BKManagedSpecific",
 		"parent": "Main",
-    "exclude": true
+    "include": false
 	},
 	{
 		"table": "TaxExemption",
 		"parent": "Main",
-    "exclude": true
+    "include": false
 	},
 	{
 		"table": "Value",
 		"parent": "Main",
-    "exclude": true
+    "include": false
 	},
 	{
 		"table": "LotSiteAppeal",
 		"parent": "Main",
-    "exclude": true
+    "include": false
 	},
 	{
 		"table": "VestingCodes",
 		"parent": "Name",
-    "exclude": true
+    "include": false
 	},
 	{
 		"table": "MailAddress",
 		"parent": "Name",
-    "exclude": true
+    "include": false
 	},
 	{
 		"table": "CareOfName",
 		"parent": "Name",
-    "exclude": true
+    "include": false
 	},
 	{
 		"table": "TypeConstruction",
 		"parent": "Building",
-    "exclude": true
+    "include": false
 	},
 	{
 		"table": "Garage",
 		"parent": "Building",
-    "exclude": true
+    "include": false
 	},
 	{
 		"table": "BuildingAreas",
 		"parent": "Building",
-    "exclude": true
+    "include": true
 	},
 	{
 		"table": "InteriorFlooring",
 		"parent": "Building",
-    "exclude": true
+    "include": false
 	},
 	{
 		"table": "ExtraFeature",
 		"parent": "Building",
-    "exclude": true
+    "include": false
 	},
 	{
 		"table": "Oby",
 		"parent": "Building",
-    "exclude": true
+    "include": false
 	},
 	{
 		"table": "ExteriorWall",
 		"parent": "Building",
-    "exclude": true
+    "include": false
 	},
 	{
 		"table": "Pool",
 		"parent": "Building",
-    "exclude": true
+    "include": false
 	},
 	{
 		"table": "InteriorWall",
 		"parent": "Building",
-    "exclude": true
+    "include": false
 	}
 ]

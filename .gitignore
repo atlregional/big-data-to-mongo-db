@@ -110,3 +110,6 @@ manifest
 extracts
 layout
 csvs
+
+#other
+.secret

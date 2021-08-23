@@ -1,6 +1,6 @@
 const data = require('./extracts/DecaturAssessments.json');
 
-console.log(data.filter(obj => obj.Building.length === 0).length);
+// console.log(data.filter(obj => obj.Building.length === 0).length);
 
 const aggregate = {
   by: {
