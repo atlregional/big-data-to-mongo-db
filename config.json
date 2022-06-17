@@ -11,5 +11,43 @@
     "manifestPath" : "./manifest/ZTRAX-Transaction.csv",
     "database" : "ztraxTransaction2021",
     "joinField" : "TransId"
+  },
+  "iterator" : {
+    "years" : [
+      2020,
+      2019,
+      2018,
+      2017,
+      2016,
+      2015,
+      2014,
+      2013
+    ],
+    "counties" : [
+      "CHEROKEE",
+      "CLAYTON",
+      "COBB",
+      "DEKALB",
+      "DOUGLAS",
+      "FAYETTE",
+      "FORSYTH",
+      "FULTON",
+      "GWINNETT",
+      "HENRY",
+      "ROCKDALE"
+    ]
+  },
+  "buildingAreaStndCodeCountyPref": {
+    "CHEROKEE" : "BAH",
+    "CLAYTON" : "BAL",
+    "COBB" : "BAL",
+    "DEKALB" : "BAL",
+    "DOUGLAS" : "BAH",
+    "FAYETTE" : "BAH",
+    "FORSYTH" : "BAL",
+    "FULTON" : "BAL",
+    "GWINNETT" : "BAL",
+    "HENRY" : "BAH",
+    "ROCKDALE" : "BAH"
   }
 }

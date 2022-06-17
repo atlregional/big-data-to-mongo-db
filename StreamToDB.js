@@ -5,8 +5,10 @@ const through2 = require('through2')
 const mongojs = require('mongojs');
 const moment = require('moment');
 
+
 const insertDocument = require('./utils/insertDocument');
-const getCollectionKeys = require('./utils/getCollectionKeys');
+const getCollectionInfo = require('./utils/getCollectionInfo');
+const valueFormatter = require('./utils/valueFormatter');
 // const getTableNamesFromCSV = require('./utils/getTableNamesFromCSV');
 // const modelConfig = require('./utils/model-association-config.json');
 
@@ -27,6 +29,7 @@ const db = mongojs(MONGODB_URI);
 // });
 
 const fileNames = [];
+
 fs.readdirSync(`./data/${dataDir}/`)
   .filter(file => file[0] !== '.')
   .forEach(file => 
@@ -40,7 +43,8 @@ const insertDataPipeline = fileName => new Promise((resolve, reject) => {
 
   const collectionName = fileName.replace('.txt', '');
 
-	const keys = getCollectionKeys(collectionName, manifest);
+	const [fields, fieldTypes] = getCollectionInfo(collectionName, manifest);
+  // console.log(fieldTypes);
   
   console.log('Started', collectionName);
 
@@ -49,10 +53,31 @@ const insertDataPipeline = fileName => new Promise((resolve, reject) => {
     .pipe(csv.createStream({
       delimiter: '|',
       endLine: '\n',
-      columns: keys
+      columns: fields
     }))
     .pipe(through2({ objectMode: true }, (data, enc, cb) => {
-      insertDocument(db, data, collectionName)
+      const hasLocationData = Object.keys(data).filter(key =>  
+        key.includes('Latitude') || key.includes('Longitude')    
+      )[0];
+
+      const formattedData = {};
+
+      Object.entries(data).forEach(([key,value]) =>
+        formattedData[key] = valueFormatter(value, fieldTypes[key] )
+      )
+
+      // ADD GEOMETRY IF THERE'S LAT AND LONG
+      if (hasLocationData) {
+        formattedData.Geometry = {
+          type: 'Point',
+          coordinates: [
+            data['PropertyAddressLongitude'] ? Number(data['PropertyAddressLongitude']) : 0,
+            data['PropertyAddressLatitude'] ? Number(data['PropertyAddressLatitude']) : 0
+          ]
+        }
+      };
+
+      insertDocument(db, formattedData, collectionName)
         .then(() => {
           cb(null, true);    
         })
@@ -85,7 +110,7 @@ const run = async () => {
     process.exit(0);
 	} 
   catch (err) {
-		console.error('pipeline failed', err);
+		console.error('Pipeline failed', err);
 		process.exit(1);
 	}
 };

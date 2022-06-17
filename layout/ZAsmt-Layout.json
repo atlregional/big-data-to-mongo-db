@@ -17,7 +17,7 @@
 	{
 		"table": "SaleData",
 		"parent": "Main",
-    "include": true
+    "include": false
 	},
 	{
 		"table": "TaxDistrict",

@@ -4,7 +4,7 @@ const es = require('event-stream');
 const mongoose = require('mongoose');
 var mongojs = require('mongojs');
 const insertDocument = require('./utils/insertDocument');
-const getCollectionKeys = require('./utils/getCollectionKeys');
+const getCollectionInfo = require('./utils/getCollectionInfo');
 
 // const createModel = require('./utils/createModel');
 const modelConfig = require('./utils/model-association-config.json');
@@ -39,7 +39,7 @@ var db = mongojs(MONGODB_URI);
 // 	process.exit(1);
 // });
 
-// const getCollectionKeysFromCSV = tableName => {
+// const getCollectionInfoFromCSV = tableName => {
 // 	const arr = fs
 // 		.readFileSync(`./manifest/${manifest}.csv`, 'utf-8')
 // 		.split('\r\n')
@@ -96,7 +96,7 @@ var db = mongojs(MONGODB_URI);
 const insertData = obj => new Promise((resolve, reject) => {
   let totalLines = 0;
 
-	const keys = getCollectionKeys(obj.table, manifest);
+	const [keys] = getCollectionInfo(obj.table, manifest);
 
   const stream = fs.createReadStream(`./data/ZAsmt/${obj.file}`, {highWaterMark: 1000});
 

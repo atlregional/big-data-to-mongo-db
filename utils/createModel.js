@@ -1,30 +1,14 @@
-const mongoose = require('mongoose'),
+const mongoose = require('mongoose');
+const typeDictionary = require('./typeDictionary');
 Schema = mongoose.Schema;
 
 
-module.exports = (collectionName, keys, modelConfig, joinField) => {
+
+module.exports = (collectionName, fieldInfo, modelConfig, joinField) => {
   const schemaObj = {};
-  console.log('KEYS', keys);
-  // const modelConfig = require('./model-association-config.json');
 
+  Object.entries(fieldInfo).forEach(([key, type]) => schemaObj[key] = { type: typeDictionary[type] });
 
-  keys.forEach(key => schemaObj[key] = { type: String });
-
-  // modelConfig.forEach(model => {
-  // 	if (collectionName === model.parent) {
-  // 		schemaObj[model.table] = [
-  // 			{ type: Object, ref: model.table }
-  // 		];
-  // 	}
-  // });
-
-  // modelConfig.forEach(model => {
-  // 	if (collectionName === model.parent) {
-  // 		schemaObj[model.table] = { type: String || Array };
-  // 	}
-  // });
-
-  // console.log({ collectionName, schemaObj });
   let schema = new Schema(schemaObj, {
     collection: collectionName,
     toJSON: { virtuals: true }
@@ -40,10 +24,6 @@ module.exports = (collectionName, keys, modelConfig, joinField) => {
       });
     }
   });
-
-  // collectionName === 'Main' ? console.log(schema) : null;
-
-
 
   return mongoose.model(collectionName, schema);
 };
